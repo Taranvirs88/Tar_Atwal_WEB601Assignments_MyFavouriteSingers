@@ -1,5 +1,8 @@
 # TarAtwalMyFavouriteSingers
 
+I added theI added the
+Title, Short description, Creator, image of the singers type for singers.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
 ## Development server
