@@ -1,7 +1,9 @@
-<div style="background-color: aqua;">
-    <h1 style="background-color:teal;text-align: center;height: 80px; padding-top: 5px;">My Favourite Singers List</h1>
-<div *ngFor="let content of contentList.contentArray">
-    <div [innerHTML]="contentList.getContentHTML(content.id - 1)"></div>
-  </div>
-  <hr>
+<div *ngFor="let content of contentListArray| slice: 0:5; let isFirst = first"
+     [style.border]="isFirst ? '2px solid black' : '1px solid black'" class="contentList">
+  <h1>{{ content.title }}</h1>
+  <p>{{ content.description }}</p>
+  <img *ngIf="content.imgURL" [src]="content.imgURL" (click)="showContent(content)">
+  <p>{{ content.creator }}</p>
+  <p *ngIf="content.type">{{ content.type }}</p>
+  <p *ngIf="content.tags">{{ content.tags }}</p>
 </div>
