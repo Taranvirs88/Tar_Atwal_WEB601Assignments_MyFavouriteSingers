@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-card',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent {
+  @Input() content: Content
+
+  showContent(getContent: any) {
+    console.log('Content ID:', getContent.id);
+    console.log('Content Title:', getContent.title);
+}
 }

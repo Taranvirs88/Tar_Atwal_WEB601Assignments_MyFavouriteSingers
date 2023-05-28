@@ -54,9 +54,4 @@ export class ContentListComponent {
       },
     ];
 
-    showContent(getContent: any) {
-      console.log('Content ID:', getContent.id);
-      console.log('Content Title:', getContent.title);
-  }
-
   }
