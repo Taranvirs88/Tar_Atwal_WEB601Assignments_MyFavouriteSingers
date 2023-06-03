@@ -1,4 +1,7 @@
-<div>
+<div class="content" *ngIf ="content.type ==='Punjabi' || content.type === 'Romantic' || content.type ===''"  [ngStyle]="{'margin': '30px '  }">
+
+<div class="border">
+
     <h1>{{ content.title }}</h1>
     <p>{{ content.description }}</p>
     <img *ngIf="content.imgURL" [src]="content.imgURL" (click)="showContent(content)">

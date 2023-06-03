@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
@@ -6,14 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
-    contentListArray =[
+    contentList:Content[] =[
       {
         id: 1,
         title: 'Tera Tera',
         imgURL: 'assets/img/img1.jpg',
         description: 'Tarsem Jassar has written and sung the song Tera Tera that emphasizes how we humans like to claim rights to everything we come across in the world; while none of it belongs to us.',
         creator: 'Tarsem Jassar',
-        type: 'Motivational Song ',
+        type: '',
         tags: ['2019']
       },
       {
@@ -31,7 +32,7 @@ export class ContentListComponent {
         imgURL: 'assets/img/Img3.jpg',
         description: 'Rutba Lyrics by Satinder Sartaaj is brand new Punjabi song from movie Kali Jotta and this latest song is featuring Neeru Bajwa, Wamiqa Gabbi.',
         creator: 'Satinder Sartaj ',
-        type: 'Soofy Music',
+        type: 'Romantic',
         tags: ['2023']
       },
       {
@@ -52,6 +53,41 @@ export class ContentListComponent {
         type: 'Punjabi',
         tags: ['Pop', 'Punjabi']
       },
+      {
+        id: 6,
+        title: 'Lamberghini',
+        imgURL: 'assets/img/img5.jpg',
+        description: 'Lamberghini is a popular Punjabi song by The Doorbeen featuring Ragini.',
+        creator: 'Jassi Gill',
+        type: '',
+        tags: ['Pop', 'Punjabi']
+      },
+      {
+        id: 7,
+        title: 'Lamberghini02',
+        imgURL: 'assets/img/img5.jpg',
+        description: 'Lamberghini is a popular Punjabi song by The Doorbeen featuring Ragini.',
+        creator: 'Jassi Gill',
+        type: 'Punjabi',
+        tags: ['Pop', 'Punjabi']
+      },
     ];
-
+    findTitle : string ='';
+    filterResult: boolean = false;
+    message :string =''
+    
+    findContent() {
+      this.filterResult = this.contentList.some(content => content.title.toLowerCase() === this.findTitle.toLowerCase());
+    
+      if (this.filterResult) {
+        this.message = 'title exists.';
+      } else {
+        this.message = ' title does not exist.';
+      }
+    }
+    ngOnInit(){
+      
+    }
+    
   }
+  
