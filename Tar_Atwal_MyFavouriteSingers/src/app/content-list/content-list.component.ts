@@ -20,7 +20,7 @@ export class ContentListComponent {
       {
         id: 2,
         title: 'Leekan',
-        imgURL: 'assets/img/img2.jpg',
+        imgURL: '',
         description: 'Leekan Song from the Ashke album is voiced by famous singer Amrinder Gill. The lyrics of Leekan Song from Ashke album are written by Raj Ranjodh',
         creator: 'Amrinder Gill',
          type: 'Romantic',
