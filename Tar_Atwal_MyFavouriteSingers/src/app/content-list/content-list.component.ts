@@ -88,6 +88,12 @@ export class ContentListComponent {
     ngOnInit(){
       
     }
+    receiveNewContent(newContent: any): void {
+      // Add the new content item to the content list
+      console.log("newContent", newContent);
+      this.contentList = [...this.contentList, newContent];
+      console.log('contentList', this.contentList);
+    }
     
   }
   
